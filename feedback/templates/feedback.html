@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Page</title>
+</head>
+<body>
+    <h1>Feedback Page</h1>
+    <a href="http://127.0.0.1:5000">Home</a>
+
+    <h3>All feedbacks:</h3>
+    {% for username, feedback in feedbacks %}
+    <p>{{username}}: {{ feedback }}</p>
+    {% endfor %}
+
+    <br> <br>
+
+    <form action="/feedback" method="POST">
+        <label for="feedback">Your feedback:</label>
+        <input type="text" id="feedback" name="feedback" required>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
